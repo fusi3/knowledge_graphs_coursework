@@ -1,0 +1,12 @@
+query_sparql_2 = """
+SELECT ?restaurant ?menuitem (ROUND(?value) as ?roundedValue)
+WHERE {
+    ?restaurant rdf:type cw:Restaurant;
+        cw:serves ?menuitem;
+        cw:restaurantName ?name .
+    ?menuitem rdf:type cw:Pizza;
+        cw:hasValue ?value .
+
+    FILTER (?value > 15.0)
+}
+"""

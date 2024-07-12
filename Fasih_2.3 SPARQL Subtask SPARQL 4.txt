@@ -1,0 +1,12 @@
+query_sparql_4 = """
+SELECT ?restaurant (SUM(?value) as ?totalprice)
+WHERE {
+    ?restaurant rdf:type cw:Restaurant;
+                cw:serves ?menuitem;
+                cw:restaurantName ?name .
+    ?menuitem rdf:type cw:Pizza;
+              cw:hasValue ?value .
+}
+GROUP BY ?restaurant
+HAVING (SUM(?value) > 50.0)
+"""

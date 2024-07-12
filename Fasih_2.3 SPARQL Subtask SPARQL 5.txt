@@ -1,0 +1,18 @@
+query_sparql_5 = """
+SELECT ?cityname ?restaurantname (MAX(?value) AS ?maxpizzaprice)
+WHERE {
+    ?restaurant rdf:type cw:Restaurant;
+                cw:serves ?menuitem;
+                cw:restaurantName ?restaurantname;
+                cw:locatedInAddress ?address.
+    ?address cw:locatedInCity ?city.
+    ?city rdf:type cw:City;
+          cw:name ?cityname.
+    ?menuitem rdf:type cw:Pizza;
+              cw:hasValue ?value.
+}
+GROUP BY ?cityname ?restaurantname
+HAVING (MAX(?value) > 10)
+ORDER BY DESC(MAX(?value)) ?cityname
+LIMIT 5
+"""

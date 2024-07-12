@@ -1,0 +1,20 @@
+query_sparql_3 = """
+SELECT ?restaurant ?menuitem ?value
+WHERE {
+    {
+        ?restaurant rdf:type cw:PizzaPlace;
+                    cw:serves ?menuitem;
+                    cw:restaurantName ?name .
+        ?menuitem rdf:type cw:GreekPizza;
+                  cw:hasValue ?value .
+        FILTER (str(?name) != "original_giorgios_cockeysville")
+    }
+    UNION
+    {
+        ?restaurant rdf:type cw:PizzaPlace;
+                    cw:serves ?menuitem .
+        ?menuitem rdf:type cw:MexicanPizza;
+                  cw:hasValue ?value .
+    }
+}
+"""

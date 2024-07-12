@@ -1,0 +1,23 @@
+All code has been commented with documentation that has been read. Please see code for comments
+
+Steps to run the Non Embedding notebook:
+
+1. Create a new environment, uncomment the pip installs and run the install and import cells - recommended
+2. Create a folder that stores all the required information and the notebook - this could just be the zipped folder that is downloaded which you can add too
+3. Rename the coursework data file to cw_data - if not already done
+4. Ensure pizza-restaurants-ontology and pizza (owl and ttl files) are in the folder
+5. Ensure lab 5 supporting code is in the folder
+6. Ensure reference-mappings-pizza.ttl is in the folder
+7. Run all cells in the notebook
+
+
+Steps to run the Embedding notebook:
+
+1. Create a new environment, uncomment the pip installs and run the install and import cells - recommended
+2. Create a folder that stores all the required information and the notebook - this could just be the zipped folder that is downloaded which you can add too
+3. Ensure lab 9 code for OWL2Vec is in the folder - specifically OWL2Vec-Star-master
+4. Ensure a copy of pizza-restaurants-ontology.ttl and generated_rdf.ttl (either use Task RDF file or the one you generate when you run the notebook) are in the folder
+5. Ensure a copy of default_updated_config_1 and default_updated_config_2 are in the folder 
+6. For cell number 5 and cell number 6, look at the instance of gensim_model1 and gensim_model2 respectively, look at parameter 1 in both and replace after the letter r the full file path for the file ontology_for_embeddings.owl - this should be the file path to the folder you created
+7. Run all cells in the notebook
+
